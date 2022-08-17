@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --open",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.3.2",
+    "nuxt": "3.0.0-rc.8"
+  },
+  "dependencies": {
+    "@formkit/nuxt": "^1.0.0-beta.10",
+    "@headlessui/vue": "^1.6.7",
+    "@heroicons/vue": "^1.0.6",
+    "@nuxtjs/supabase": "^0.1.19",
+    "axios": "^0.27.2",
+    "floating-vue": "^2.0.0-beta.19",
+    "node-schedule": "^2.1.0"
+  }
+}
