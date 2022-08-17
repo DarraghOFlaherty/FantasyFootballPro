@@ -1,0 +1,23 @@
+export const clubs = [
+  "ARS",
+  "AVL",
+  "BOU",
+  "BRE",
+  "BHA",
+  "CHE",
+  "CRY",
+  "EVE",
+  "FUL",
+  "LEI",
+  "LEE",
+  "LIV",
+  "MCI",
+  "MUN",
+  "NEW",
+  "NFO",
+  "SOU",
+  "TOT",
+  "WHU",
+  "WOL",
+] as const;
+export type IClub = typeof clubs[number];
