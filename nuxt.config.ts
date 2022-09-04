@@ -7,9 +7,9 @@ export default defineNuxtConfig({
   },
   buildModules: ["floating-vue/nuxt"],
   modules: ["@nuxtjs/tailwindcss", "@formkit/nuxt", "@nuxtjs/supabase"],
-  nitro: {
-    plugins: ["~/server/index.ts"],
-  },
+  // nitro: {
+  //   plugins: ["~/server/index.ts"],
+  // },
   formkit: {
     configFile: "formkit.config.ts",
   },

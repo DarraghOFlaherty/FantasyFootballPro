@@ -48,7 +48,7 @@
             <li
               :class="[
                 active ? 'bg-indigo-100 text-indigo-900' : 'text-slate-900',
-                'relative cursor-default select-none py-2 px-4',
+                'relative cursor-default select-none py-2 pl-10 pr-4',
               ]"
             >
               <span
