@@ -18,19 +18,28 @@
 
       <div class="flex gap-2 absolute px-2 bottom-2">
         <span
+          v-tooltip="'The players position'"
           class="bg-white text-slate-800 text-sm font-semibold tracking-wider uppercase rounded-lg px-3 py-1.5"
         >
           {{ player.position }}
         </span>
         <span
+          v-tooltip="'The players club'"
           class="bg-white text-slate-800 text-sm font-semibold tracking-wider uppercase rounded-lg px-3 py-1.5"
         >
           {{ player.club }}
         </span>
         <span
+          v-tooltip="'The players current price'"
           class="bg-white text-slate-800 text-sm font-semibold tracking-wider uppercase rounded-lg px-3 py-1.5"
         >
           {{ `£${(player.price / 10).toFixed(1)}` }}
+        </span>
+        <span
+          v-tooltip="'The players expected points for the next gameweek'"
+          class="bg-white text-slate-800 text-sm font-semibold tracking-wider uppercase rounded-lg px-3 py-1.5"
+        >
+          {{ player.expectedPoints }}
         </span>
       </div>
     </div>

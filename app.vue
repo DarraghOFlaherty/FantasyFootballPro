@@ -133,8 +133,6 @@
               <tbody class="text-sm divide-y divide-slate-100">
                 <tr
                   v-for="{
-                    id,
-                    code,
                     name,
                     position,
                     club,
@@ -207,13 +205,20 @@
           <LimitPicker v-model="limit"></LimitPicker>
         </div>
       </div>
-      <div class="py-6 sm:py-8 lg:py-12">
-        <div class="mb-10 md:mb-16">
+      <div class="p-6 sm:p-8 lg:p-12 bg-white shadow-md rounded-lg mt-10">
+        <div class="text-center">
           <h2
             class="text-slate-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6"
           >
             Our Top Picks
           </h2>
+          <div class="flex justify-center mb-0">
+            <p
+              class="lg:w-3/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12"
+            >
+              This is our top picks for the next gameweek based on expected points.
+            </p>
+          </div>
         </div>
         <div
           class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-8"

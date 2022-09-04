@@ -2,32 +2,41 @@
   <Listbox v-model="selectedClubs" multiple>
     <div class="relative w-64">
       <ListboxButton
-        class="relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-300 sm:text-sm"
+        class="flex justify-between w-full cursor-pointer rounded-lg bg-white py-2 pl-3 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-300 sm:text-sm"
       >
-        <span class="block truncate">
+        <span class="flex gap-2">
           <template v-if="selectedClubs.length > 0">
-            {{ selectedClubs.map((club) => club).join(", ") }}
+            <div
+              v-for="(club, index) in selectedClubs"
+              class="h-5 flex items-center bg-slate-500 text-white rounded-full gap-1 p-2"
+            >
+              <span class="text-xs">{{ club }}</span>
+              <XIcon
+                @click.prevent="selectedClubs.splice(index, 1)"
+                class="h-3 w-3"
+              ></XIcon>
+            </div>
           </template>
           <template v-else>Filter by club...</template>
         </span>
-        <span
-          class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8 9l4-4 4 4m0 6l-4 4-4-4"
-            />
-          </svg>
-        </span>
+        <div class="flex">
+          <span class="pointer-events-none flex items-center pr-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+              />
+            </svg>
+          </span>
+        </div>
       </ListboxButton>
 
       <transition
@@ -86,6 +95,7 @@
 </template>
 
 <script setup lang="ts">
+import { XIcon } from "@heroicons/vue/solid";
 import { ref } from "vue";
 import {
   Listbox,
